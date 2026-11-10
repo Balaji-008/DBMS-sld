@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
-import {mkdir,writeFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {mkdir,readFile,writeFile} from 'node:fs/promises';
 import {dirname,resolve} from 'node:path';
 import {chromium} from '@playwright/test';
 
@@ -7,9 +8,11 @@ const baseUrl=(process.env.PUBLIC_QA_BASE_URL||'http://127.0.0.1:3003').replace(
 const outputPath=resolve(process.env.PUBLIC_QA_DEVICE_REPORT||'docs/showcase/public-device-results.json');
 const screenshotDir=resolve('test-results/public-release');
 const widths=[320,360,390,430,650,651,768,900,901,1024,1440,1920];
-const report:{generatedAt:string;target:string;viewportWidths:number[];textZoomMethod:string;checks:string[];measurements:unknown[];reducedMotion:{gifRequests:number;posterOnly:boolean}|null;status:'running'|'passed'|'failed';failure?:string}={
- generatedAt:new Date().toISOString(),target:'configured public-release QA landing route',viewportWidths:widths,
- sourceHashes:{'client/src/pages/Landing.tsx':'91b67ecc93bbc2d69390c2920e6f5719b47a78a95144a665425d91e5995c4bcc','client/src/pages/Login.tsx':'1cccf867646880698f397191a4f36198db7aa32da1d195b8d074acddd8d5a00e','client/src/styles.css':'acf9f93e031d6512be7644d8eb16f7e970068108513c0c9b63fe0afea68c3714'},
+const sourceFiles=['client/src/pages/Landing.tsx','client/src/pages/Login.tsx','client/src/pages/Profile.tsx','client/src/styles.css'];
+const sourceHashes=Object.fromEntries(await Promise.all(sourceFiles.map(async path=>[path,createHash('sha256').update(await readFile(path)).digest('hex')])));
+const report:{generatedAt:string;target:string;sourceRevision:string;sourceState:string;viewportWidths:number[];sourceHashes:Record<string,string>;screenshots:Record<string,string>;textZoomMethod:string;checks:string[];measurements:unknown[];reducedMotion:{gifRequests:number;posterOnly:boolean}|null;status:'running'|'passed'|'failed';failure?:string}={
+ generatedAt:new Date().toISOString(),target:'configured public-release QA landing and login routes',sourceRevision:process.env.PUBLIC_QA_SOURCE_REVISION||'unspecified',sourceState:process.env.PUBLIC_QA_SOURCE_STATE||'unspecified',viewportWidths:widths,
+ sourceHashes,
  screenshots:{desktop:'test-results/public-release/landing-desktop.png',mobile:'test-results/public-release/landing-mobile.png'},
  textZoomMethod:'At 320, 390, 650 and 651 CSS px, double the computed font size of each visible text-bearing element through Playwright before measuring; this approximates 200% browser text zoom without changing browser chrome.',
  checks:[],measurements:[],reducedMotion:null,status:'running'
@@ -26,6 +29,15 @@ try{
  await page.goto(baseUrl,{waitUntil:'networkidle'});
  await page.locator('.landing-page').waitFor();
  const title=await page.title();assert(title.includes('Amrita Placement Portal'),'landing page title is present');pass('public landing route loads');
+ await page.goto(`${baseUrl}/login`,{waitUntil:'networkidle'});
+ await page.getByRole('button',{name:'Privacy & terms'}).click();
+ const privacy=page.getByRole('dialog',{name:'Privacy & terms'});
+ await privacy.getByText(/Aadhaar documents uploaded through the portal are accessible to you and authorized placement staff/i).waitFor();
+ await privacy.getByText(/External document links follow the sharing settings of their host/i).waitFor();
+ await privacy.getByText(/verify control of your email address/i).waitFor();
+ pass('public login privacy dialog reflects the verified email and document-sharing boundaries');
+ await page.goto(baseUrl,{waitUntil:'networkidle'});
+ await page.locator('.landing-page').waitFor();
  for(const width of widths){
   await page.setViewportSize({width,height:1000});
   await page.evaluate(()=>window.scrollTo(0,0));

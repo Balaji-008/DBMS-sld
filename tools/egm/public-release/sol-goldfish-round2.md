@@ -1,0 +1,63 @@
+{
+  "status": "completed",
+  "verdict": "changes_requested",
+  "reviewedHashes": {
+    "client/src/pages/Landing.tsx": "91b67ecc93bbc2d69390c2920e6f5719b47a78a95144a665425d91e5995c4bcc",
+    "client/src/pages/Login.tsx": "94fd42d2fbf45ad241f210d83e4728768d134008190549189a92a9d2fa95e1d2",
+    "client/src/pages/Profile.tsx": "59aa88ab277edfad10ac544300894540559a54c6a027497ce9efaa24833d0df7",
+    "client/src/styles.css": "acf9f93e031d6512be7644d8eb16f7e970068108513c0c9b63fe0afea68c3714"
+  },
+  "filesRead": [
+    "tools/egm/public-release/release-draft.md",
+    "tools/egm/public-release/review-context.md",
+    "tools/egm/public-release/source-allowlist.md",
+    "tools/egm/public-release/goldfish-review-prompt.md",
+    "tools/egm/upstream/docs/codex.md",
+    "tools/egm/upstream/agents/design_critic.md",
+    "tools/egm/upstream/resources/document_standards/feature-spec-standard.md",
+    "README.md",
+    "docs/API-CONTRACT.md",
+    "docs/SQL-WORKSHOP.md",
+    "docs/team-viva/DBMS-WALKTHROUGH.md",
+    "docs/team-viva/DEMO-CHECKLIST.md",
+    "database/SCHEMA.md",
+    "database/001_schema.sql",
+    "server/src/auth-routes.ts",
+    "server/src/auth.ts",
+    "server/src/routes.ts",
+    "server/src/upload-routes.ts",
+    "client/src/pages/Landing.tsx",
+    "client/src/pages/Login.tsx",
+    "client/src/pages/Profile.tsx",
+    "client/src/styles.css",
+    "design/public-patterns/campus-contours.md",
+    "docs/showcase/public-device-results.json",
+    ".superpowers/sdd/public-release/qa-publish-report.md",
+    "tools/egm/public-release/public-qa-followup.md",
+    "deliverables/presentation/content.json",
+    "deliverables/presentation/generate.js",
+    "deliverables/presentation/amrita-placement-portal-showcase.pptx",
+    "deliverables/presentation/amrita-placement-portal-showcase.pdf",
+    "docs/presentation-speaking-scripts/01-balcha-venkata-parswanadh.md",
+    "docs/presentation-speaking-scripts/02-balaji-rayudu.md",
+    "docs/presentation-speaking-scripts/03-bhavana-malladi.md",
+    "docs/presentation-speaking-scripts/04-abhiram-support-demo.md",
+    "docs/presentation-speaking-scripts/MASTER-HANDOFF.md",
+    "deliverables/video/README.md"
+  ],
+  "findings": [
+    {
+      "id": "design_critic-round-1",
+      "severity": "Major",
+      "sourcePath": "tools/egm/public-release/release-draft.md",
+      "line": 42,
+      "claim": "QA statements cite dated current evidence, but two public-facing artifacts still label the earlier 19-check layout run as current and cite the now-updated device-results file.",
+      "evidence": "README.md:126-132 calls the 2026-11-10 result current and says 19 checks. deliverables/presentation/content.json:107,136-138, deliverables/presentation/generate.js slide 4, and slide 4 of both PPTX/PDF say 19. The PPTX speaker note also says 19. docs/showcase/public-device-results.json reports status passed, 20 checks, the tested public-checkout source state, and the four current hashes; tools/egm/public-release/public-qa-followup.md explains that this supersedes the earlier result for Login/Profile.",
+      "reproduction": "Compare README.md:126-132 and slide 4/notes against docs/showcase/public-device-results.json checks (20 entries) and the follow-up report's Tested source and Results sections.",
+      "impact": "A reader following the README or presentation citation cannot reconcile the asserted current count with the cited file and may mistake the pre-export result for validation of the tested Login/Profile copy.",
+      "recommendation": "Update the README and editable presentation QA content to identify the 2026-11-11 public-checkout 20-check follow-up and its source state, or explicitly label the 19-check run historical and cite the pre-export report separately. Regenerate the PPTX/PDF and align slide 4 speaker notes with that wording.",
+      "confidence": "high"
+    }
+  ],
+  "limitation": "Independent bounded source review only. The prior Sol/Goldfish report listed in the allowlist was intentionally excluded by the current reviewer mandate. No tests, build, render, browser, remote query, network access, Git inspection, or candidate-tree privacy scan was performed; worker-reported QA is not reviewer-executed QA. This is not a security certification or confirmation that the uncommitted follow-up reached main."
+}

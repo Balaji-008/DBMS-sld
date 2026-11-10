@@ -1,6 +1,8 @@
 {
-  "generatedAt": "2026-11-10T16:22:01.527Z",
-  "target": "configured public-release QA landing route",
+  "generatedAt": "2026-11-10T19:02:33.937Z",
+  "target": "configured public-release QA landing and login routes",
+  "sourceRevision": "3c4308f5bbfa64aa1f11a640e25e99dd0377dbcf",
+  "sourceState": "public checkout with frozen Login/Profile privacy-copy follow-up",
   "viewportWidths": [
     320,
     360,
@@ -17,7 +19,8 @@
   ],
   "sourceHashes": {
     "client/src/pages/Landing.tsx": "91b67ecc93bbc2d69390c2920e6f5719b47a78a95144a665425d91e5995c4bcc",
-    "client/src/pages/Login.tsx": "1cccf867646880698f397191a4f36198db7aa32da1d195b8d074acddd8d5a00e",
+    "client/src/pages/Login.tsx": "94fd42d2fbf45ad241f210d83e4728768d134008190549189a92a9d2fa95e1d2",
+    "client/src/pages/Profile.tsx": "59aa88ab277edfad10ac544300894540559a54c6a027497ce9efaa24833d0df7",
     "client/src/styles.css": "acf9f93e031d6512be7644d8eb16f7e970068108513c0c9b63fe0afea68c3714"
   },
   "screenshots": {
@@ -27,6 +30,7 @@
   "textZoomMethod": "At 320, 390, 650 and 651 CSS px, double the computed font size of each visible text-bearing element through Playwright before measuring; this approximates 200% browser text zoom without changing browser chrome.",
   "checks": [
     "public landing route loads",
+    "public login privacy dialog reflects the verified email and document-sharing boundaries",
     "hero fits and copy/CTA/GIF/sketch do not overlap at 320px",
     "hero fits and copy/CTA/GIF/sketch do not overlap at 360px",
     "hero fits and copy/CTA/GIF/sketch do not overlap at 390px",

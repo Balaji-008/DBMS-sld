@@ -27,10 +27,13 @@ All paths are relative to the root of the public snapshot and portable to any cl
 ## Landing and QA evidence
 - `client/src/pages/Landing.tsx`
 - `client/src/pages/Login.tsx`
+- `client/src/pages/Profile.tsx`
 - `client/src/styles.css`
 - `design/public-patterns/campus-contours.md`
 - `docs/showcase/public-device-results.json`
 - `.superpowers/sdd/public-release/qa-publish-report.md`
+- `tools/egm/public-release/public-qa-followup.md`
+- `tools/egm/public-release/sol-goldfish-final.md`
 
 ## Presentation and video artifacts
 - `deliverables/presentation/content.json`

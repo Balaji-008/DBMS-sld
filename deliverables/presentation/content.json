@@ -104,7 +104,7 @@
     "Placement team: approval → outcomes and reports",
     "Student: hackathon registration → registration list"
   ],
-  "qaNote": "Nov 10 mobile, app and public-device QA completed; reports cover exercised journeys and layout checks, not exhaustive coverage or physical-device certification.",
+  "qaNote": "Public-source follow-up covers the frozen Login/Profile copy state; QA reports cover exercised journeys and layout checks, not exhaustive coverage or physical-device certification.",
   "sources": [
     "README.md",
     "database/001_schema.sql",
@@ -112,10 +112,11 @@
     "docs/team-viva/DBMS-WALKTHROUGH.md",
     ".superpowers/sdd/public-release/qa-publish-report.md",
     "docs/showcase/public-device-results.json",
+    "tools/egm/public-release/public-qa-followup.md",
     "docs/team-viva/DBMS-WALKTHROUGH.md"
   ],
   "qa": {
-    "verifiedAt": "2026-11-10T16:22:01Z",
+    "verifiedAt": "2026-11-10T19:02:33.937Z",
     "gates": [
       {
         "label": "brand",
@@ -133,8 +134,8 @@
         "log": "test-results/review-loop/mobile/2026-11-10T16-18-48-266Z-07e79e72/state.json"
       },
       {
-        "label": "public landing layout",
-        "checks": 19,
+        "label": "public landing + Login privacy",
+        "checks": 20,
         "log": "docs/showcase/public-device-results.json"
       }
     ],

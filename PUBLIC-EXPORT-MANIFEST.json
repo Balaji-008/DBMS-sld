@@ -3393,6 +3393,22 @@
       "findings": 0,
       "manifestSourceFiles": 519,
       "excludedPrivateGitHistory": true
+    },
+    {
+      "phase": "post-publication-final-precommit",
+      "status": "passed",
+      "filesScanned": 526,
+      "textFiles": 230,
+      "officeXmlEntries": 38,
+      "pdfTextAndMetadata": true,
+      "mp4Metadata": true,
+      "syntheticOrganizationSeedEmailsReviewed": 24,
+      "findings": 0,
+      "manifestSourceFiles": 519,
+      "excludedPrivateGitHistory": true,
+      "ignoredRuntimeAndDependencyTreesExcluded": true,
+      "valuesPrinted": false,
+      "note": "Scanned current tracked and non-ignored public candidate files, including PPTX Office XML, PDF text/metadata, and MP4 metadata. Private configured environment files, ignored dependencies/build/test/runtime output, and Git history were excluded."
     }
   ],
   "credentialAdjudication": {
@@ -3403,5 +3419,206 @@
     "publicSourceMatchesPrivateSource": true,
     "valuesPrinted": false
   },
-  "sourceCheckoutPath": "."
+  "sourceCheckoutPath": ".",
+  "postPublicationPatches": [
+    {
+      "patchId": "followup-2026-11-11",
+      "basedOnPublishedCommit": "3c4308f5bbfa64aa1f11a640e25e99dd0377dbcf",
+      "patchDescription": "Public-source Login/Profile privacy-copy correction, follow-up QA evidence, presentation count correction, current review record, and deployment follow-up.",
+      "sourceHistory": "Original export sourceSha256/exportSha256 entries and initial publication records are retained as historical provenance; these current hashes are recorded separately for this post-publication patch.",
+      "files": [
+        {
+          "path": "README.md",
+          "change": "modified",
+          "currentSha256": "3f8ce45a516e5b09257948d4149a7c782ff81b9f18daab78ae50ba45e48eb078",
+          "bytes": 16472
+        },
+        {
+          "path": "client/src/pages/Login.tsx",
+          "change": "modified",
+          "currentSha256": "94fd42d2fbf45ad241f210d83e4728768d134008190549189a92a9d2fa95e1d2",
+          "bytes": 10522
+        },
+        {
+          "path": "client/src/pages/Profile.tsx",
+          "change": "modified",
+          "currentSha256": "59aa88ab277edfad10ac544300894540559a54c6a027497ce9efaa24833d0df7",
+          "bytes": 10004
+        },
+        {
+          "path": "deliverables/presentation/amrita-placement-portal-showcase.pdf",
+          "change": "modified",
+          "currentSha256": "8196fdd90cec25042c0ff3ff0b1d104d22d8b1342109005ceea3ee95c5a9f0f1",
+          "bytes": 211445
+        },
+        {
+          "path": "deliverables/presentation/amrita-placement-portal-showcase.pptx",
+          "change": "modified",
+          "currentSha256": "f24a8de1fc839933cf21f16f80c021cf0de2b74d2585e02edab37959b3a67671",
+          "bytes": 337460
+        },
+        {
+          "path": "deliverables/presentation/content.json",
+          "change": "modified",
+          "currentSha256": "409aa0e33eb588011b69e1bf668b86ad91b5c000a7ba5609469c8175fd49d524",
+          "bytes": 4983
+        },
+        {
+          "path": "deliverables/presentation/generate.js",
+          "change": "modified",
+          "currentSha256": "8446b861f116db543b1bfc1baa8253b8e2c8fcbdf0641b8597f41d08a643ba05",
+          "bytes": 16514
+        },
+        {
+          "path": "deliverables/presentation/preview/contact-sheet.png",
+          "change": "modified",
+          "currentSha256": "9b24118981cd58364896fffe8bd364143f5c529b37bce63a8a1e3189af4915d0",
+          "bytes": 452743
+        },
+        {
+          "path": "deliverables/presentation/preview/slide-1.png",
+          "change": "modified",
+          "currentSha256": "9f05a4da8872a73da7645481447e335218724683e2007f7990caca4ac3bccef1",
+          "bytes": 155568
+        },
+        {
+          "path": "deliverables/presentation/preview/slide-4.png",
+          "change": "modified",
+          "currentSha256": "59bef7c0683e60d2061acf7439104fd824501e7f1313b23c6e05a19cfe52538b",
+          "bytes": 130254
+        },
+        {
+          "path": "docs/showcase/public-device-results.json",
+          "change": "modified",
+          "currentSha256": "f7c43f1ba9bfc61056c45cdd7ee0773c8516b8f9bae6a57c773310fdcf608b68",
+          "bytes": 21784
+        },
+        {
+          "path": "tests/public-device.ts",
+          "change": "modified",
+          "currentSha256": "b07ed86013b881dc15045e468fbe0bc5ab71c9a5294597943ed955b10f7dab09",
+          "bytes": 10698
+        },
+        {
+          "path": "tools/egm/public-release/goldfish-review-prompt.md",
+          "change": "modified",
+          "currentSha256": "30ab4b1f8ec7f2d7c833a2466608035ad47ef10d95ca240203d5215e9febaa18",
+          "bytes": 4657
+        },
+        {
+          "path": "tools/egm/public-release/live-deploy-followup.md",
+          "change": "added",
+          "currentSha256": "ce2c7dd0731730e69282cf9ae380f3b511a2ccdf534f87c4972ff64f64de9f3d",
+          "bytes": 1932
+        },
+        {
+          "path": "tools/egm/public-release/public-qa-followup.md",
+          "change": "added",
+          "currentSha256": "925e6895ed9b1cca84c4dc702c6b1d6bb118d1e7770d12a6f5d88f58c363803b",
+          "bytes": 3937
+        },
+        {
+          "path": "tools/egm/public-release/release-draft.md",
+          "change": "modified",
+          "currentSha256": "bad8aa300ff151fbcd2e52513cc38f4665dc2cbb6084867f94260736643a5264",
+          "bytes": 8981
+        },
+        {
+          "path": "tools/egm/public-release/review-context.md",
+          "change": "modified",
+          "currentSha256": "e79dc80a844ece9b60bbfa8d1d89f10082e714de4b0e73d31b96bd0a8a000e45",
+          "bytes": 4861
+        },
+        {
+          "path": "tools/egm/public-release/sol-goldfish-final.md",
+          "change": "added",
+          "currentSha256": "2a3b9f2c86e08096c683e896b93a55c3a8c78f7e3b3ff54acf27fc5b10950e96",
+          "bytes": 6193
+        },
+        {
+          "path": "tools/egm/public-release/sol-goldfish-round2.md",
+          "change": "added",
+          "currentSha256": "a4c1d0529a9d4aaf3cbbb8097c49e087c4f2270730ea820fb26eeaa543447428",
+          "bytes": 4303
+        },
+        {
+          "path": "tools/egm/public-release/sol-goldfish-round3.md",
+          "change": "added",
+          "currentSha256": "a6a953b5e31b665124c182f1217a2bb62286abd690dec7eba936e62cbc38fef9",
+          "bytes": 3199
+        },
+        {
+          "path": "tools/egm/public-release/source-allowlist.md",
+          "change": "modified",
+          "currentSha256": "393166ebf81e7e93d7a21aa42086712656f28a481d51275f34eda886a0b938e1",
+          "bytes": 2410
+        },
+        {
+          "path": "tools/egm/public-release/terra-review-response.md",
+          "change": "added",
+          "currentSha256": "e347dc58e2a14adb2e4b5cfa6e54b3c2ba3a23949edcc03ad1b90ce91fdc6a3e",
+          "bytes": 1576
+        }
+      ],
+      "review": {
+        "file": "tools/egm/public-release/sol-goldfish-round3.md",
+        "status": "completed",
+        "findings": 0,
+        "scope": "Current bounded public-source review; not a security certification."
+      },
+      "qa": {
+        "report": "tools/egm/public-release/public-qa-followup.md",
+        "date": "2026-11-11",
+        "baseCommit": "3c4308f5bbfa64aa1f11a640e25e99dd0377dbcf",
+        "build": "passed",
+        "publicDeviceChecks": {
+          "passed": 20,
+          "scope": "19 landing layout/motion checks plus one Login privacy-dialog assertion"
+        },
+        "mobileReviewGates": {
+          "passed": 5,
+          "names": [
+            "typecheck",
+            "build",
+            "brand-browser",
+            "shell-browser",
+            "functional-browser"
+          ]
+        },
+        "emailMimeChecks": {
+          "passed": 14,
+          "externalEmailSent": false
+        },
+        "limitations": [
+          "The 87 Oracle integration checks belong to earlier QA evidence, not this follow-up.",
+          "Profile copy was included in the build and source hash; the exact-copy assertion targeted the Login dialog.",
+          "Browser emulation does not certify physical devices."
+        ]
+      },
+      "deployment": {
+        "report": "tools/egm/public-release/live-deploy-followup.md",
+        "workerVersion": "f1b4e716-37f1-44c9-85b8-2a1218b12105",
+        "liveAssetsMatchedLocalBuild": true,
+        "healthStatus": "ok",
+        "database": "connected",
+        "smtpConfigured": true,
+        "deployUsedExistingBuiltAssets": true
+      },
+      "privacyScan": {
+        "phase": "post-publication-final-precommit",
+        "status": "passed",
+        "filesScanned": 526,
+        "textFiles": 230,
+        "officeXmlEntries": 38,
+        "pdfTextAndMetadata": true,
+        "videoMetadata": true,
+        "syntheticOrganizationSeedEmailsReviewed": 24,
+        "findings": 0,
+        "valuesPrinted": false,
+        "excludedPrivateGitHistory": true,
+        "ignoredRuntimeAndDependencyTreesExcluded": true
+      },
+      "manifestSelfReferenceExcluded": true
+    }
+  ]
 }
