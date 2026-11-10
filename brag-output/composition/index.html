@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape" data-composition-variables='[
+  {"id":"wine","type":"color","label":"Wine","default":"#431626"},
+  {"id":"burgundy","type":"color","label":"Burgundy","default":"#761731"},
+  {"id":"ivory","type":"color","label":"Ivory","default":"#f8f6f2"},
+  {"id":"gold","type":"color","label":"Gold","default":"#c79a63"}
+]'>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      :root { --wine: #431626; --burgundy: #761731; --ivory: #f8f6f2; --gold: #c79a63; }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: var(--wine); }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="22" data-width="1920" data-height="1080">
+      <div id="scene-campus" data-composition-id="scene-campus" data-composition-src="compositions/campus.html" data-start="0" data-duration="4" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="scene-dashboard" data-composition-id="scene-dashboard" data-composition-src="compositions/dashboard.html" data-start="4" data-duration="6" data-track-index="2" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="scene-flow" data-composition-id="scene-flow" data-composition-src="compositions/flow.html" data-start="10" data-duration="7" data-track-index="3" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="scene-outro" data-composition-id="scene-outro" data-composition-src="compositions/outro.html" data-start="17" data-duration="5" data-track-index="4" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <audio id="music-bed" class="clip" src="assets/music/happy-beats-business-moves-vol-10-by-ende-dot-app.mp3" data-start="0" data-duration="22" data-track-index="10" data-volume="0.24" data-fade-in="0.8" data-fade-out="1.1"></audio>
+      <audio id="logo-reveal-sfx" class="clip" src="assets/sfx/impactSoft_medium_001.ogg" data-start="1.6" data-duration="0.18" data-track-index="11" data-volume="0.28"></audio>
+      <audio id="closing-sfx" class="clip" src="assets/sfx/impactSoft_medium_001.ogg" data-start="17.8" data-duration="0.18" data-track-index="12" data-volume="0.22"></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

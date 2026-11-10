@@ -1,0 +1,26 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #431626; color: #f8f6f2; }
+    .art { position: absolute; left: 70px; top: 360px; width: 980px; height: 322px; object-fit: contain; opacity: .78; }
+    .brand { position: absolute; right: 162px; top: 306px; width: 510px; height: auto; object-fit: contain; }
+    .line { position: absolute; right: 167px; top: 514px; width: 136px; height: 3px; background: #c79a63; }
+    .copy { position: absolute; right: 162px; top: 564px; width: 690px; color: #f8f6f2; font: 500 76px/.98 'EB Garamond', Georgia, serif; text-align: left; }
+    .copy span { color: #e4bd8c; }
+    .clip { opacity: 1; }
+  </style>
+  <div id="root" data-composition-id="scene-outro" data-width="1920" data-height="1080">
+    <img id="outro-sketch" class="clip art" src="assets/brand/campus-sketch.webp" alt="Amrita Bengaluru campus architectural sketch" data-start="0" data-duration="5" data-track-index="1" />
+    <img id="outro-wordmark" class="clip brand" src="assets/brand/amrita-logo-trimmed.png" alt="Amrita Bengaluru Campus" data-start="0.3" data-duration="4.7" data-track-index="2" />
+    <div id="outro-rule" class="clip line" data-start="0.55" data-duration="4.45" data-track-index="3"></div>
+    <h2 id="outro-copy" class="clip copy" data-start="0.6" data-duration="4.4" data-track-index="4">The next right<br/><span>opportunity.</span></h2>
+  </div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#outro-sketch", { x: -18 }, { x: 0, duration: 0.75, ease: "power2.out" }, 0);
+    tl.fromTo("#outro-wordmark", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.3);
+    tl.fromTo("#outro-rule", { opacity: 0, scaleX: 0, transformOrigin: "left center" }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "power3.out" }, 0.65);
+    tl.fromTo("#outro-copy", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.62, ease: "power3.out" }, 0.7);
+    window.__timelines["scene-outro"] = tl;
+  </script>
+</template>

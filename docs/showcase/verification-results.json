@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-11-09T16:25:01Z",
+  "source": {
+    "gitHead": "f2a2e96",
+    "worktreeModified": true,
+    "frozenClientAssets": {
+      "javascript": "index-CvvHfYsk.js",
+      "stylesheet": "index-B_WNGRsQ.css"
+    }
+  },
+  "reviewLoop": {
+    "status": "manual-allowlisted-gates-passed",
+    "attempts": [
+      {
+        "command": "node scripts/review-loop.mjs --task mobile --resume",
+        "exitCode": 2,
+        "result": "No prior state.json was available to resume."
+      },
+      {
+        "command": "node scripts/review-loop.mjs --task mobile",
+        "exitCode": 1,
+        "result": "Stopped before typecheck: systemd-run rejected --wait combined with --scope. The runner was left unchanged."
+      }
+    ],
+    "manualFallback": "The three fixed browser gates were run sequentially in memory-capped systemd scopes; no shell command or gate was skipped."
+  },
+  "gates": [
+    {
+      "id": "brand-browser",
+      "command": "set -o pipefail; systemd-run --user --scope -p MemoryMax=1G -p MemorySwapMax=0 -p CPUQuota=200% env NODE_OPTIONS=--max-old-space-size=384 npx tsx tests/brand-browser.ts 2>&1 | tee test-results/showcase/brand-final.log",
+      "exitCode": 0,
+      "checksPassed": 29,
+      "log": "test-results/showcase/brand-final.log",
+      "coverage": [
+        "landing overflow at 320, 360, 390, 430, 768px",
+        "campus/logo image decode and image request errors",
+        "role links and login role selection",
+        "saved animation pause/resume and reduced-motion posters",
+        "390px email preview fit"
+      ],
+      "externalEmailSent": false
+    },
+    {
+      "id": "shell-browser",
+      "command": "set -o pipefail; systemd-run --user --scope -p MemoryMax=1G -p MemorySwapMax=0 -p CPUQuota=200% env NODE_OPTIONS=--max-old-space-size=384 npx tsx tests/browser.ts 2>&1 | tee test-results/showcase/browser-final.log",
+      "exitCode": 0,
+      "checksPassed": 35,
+      "log": "test-results/showcase/browser-final.log",
+      "mobileViewportsPx": [320, 360, 390, 430, 768],
+      "checked": [
+        "login horizontal overflow and 44px controls",
+        "keyboard focus visibility",
+        "mobile help dialog fit, initial focus, Escape close and focus restoration",
+        "student dashboard/opportunities/applications/profile/hackathons/outcomes overflow and 44px targets",
+        "closed navigation inertness and keyboard exclusion",
+        "eligible checkbox focus cue",
+        "open/close mobile navigation state and logo",
+        "placement-team students/companies/certificates/reports/approvals routes"
+      ],
+      "browserErrors": 0,
+      "failedImages": 0,
+      "mobileAuditIssues": [],
+      "externalEmailSent": false
+    },
+    {
+      "id": "functional-browser",
+      "command": "set -o pipefail; systemd-run --user --scope -p MemoryMax=2560M -p MemorySwapMax=0 -p CPUQuota=200% env NODE_OPTIONS=--max-old-space-size=2560 npx tsx tests/functional-browser.ts 2>&1 | tee test-results/showcase/functional-final.log",
+      "exitCode": 0,
+      "checksPassed": 43,
+      "log": "test-results/showcase/functional-final.log",
+      "mobileViewportsPx": [320, 360, 390, 430, 768],
+      "roleRouteCoverage": {
+        "student": ["/", "/opportunities", "/applications", "/profile", "/certificates", "/hackathons", "/outcomes"],
+        "recruiter": ["/", "/opportunities", "/applications", "/companies", "/outcomes", "/reports", "/hackathons"],
+        "placementTeam": ["/", "/opportunities", "/applications", "/students", "/companies", "/certificates", "/hackathons", "/outcomes", "/approvals", "/reports"]
+      },
+      "workflows": [
+        "company create/edit",
+        "opportunity create/edit, filter/search and apply",
+        "student profile edit with blank optional personal email and multiple phone numbers",
+        "synthetic PDF resume upload and certificate add/view/delete",
+        "application withdraw and placement/internship outcome recording",
+        "recruiter registration, placement-team approval and recruiter opportunity create",
+        "hackathon create, team registration and registration-list review",
+        "mobile dialog viewport/focus/scroll/44px checks",
+        "mobile table action/data-label and header checks"
+      ],
+      "browserErrors": 0,
+      "failedImages": 0,
+      "mobileLayoutIssues": [],
+      "externalEmailSent": false,
+      "testDataCleanup": "completed by suite finally block"
+    }
+  ],
+  "captures": [
+    { "path": "test-results/showcase/landing-desktop.png", "width": 1440, "height": 900, "data": "product/brand view" },
+    { "path": "test-results/showcase/student-dashboard-desktop.png", "width": 1440, "height": 900, "data": "synthetic Demo Student" },
+    { "path": "test-results/showcase/job-detail-desktop.png", "width": 1440, "height": 900, "data": "synthetic Demo Software Engineer / Demo Systems" },
+    { "path": "test-results/showcase/reports-desktop.png", "width": 1440, "height": 900, "data": "current Oracle QA database aggregate; provenance unverified, do not quote as campus outcome statistics" },
+    { "path": "test-results/showcase/landing-mobile.png", "width": 390, "height": 844, "data": "product/brand view" },
+    { "path": "test-results/showcase/login-mobile.png", "width": 390, "height": 844, "data": "fake test login only; no OTP displayed" },
+    { "path": "test-results/showcase/dashboard-mobile.png", "width": 390, "height": 844, "data": "synthetic Demo Student" },
+    { "path": "test-results/showcase/apply-mobile.png", "width": 390, "height": 844, "data": "synthetic Demo Student / Demo Software Engineer" },
+    { "path": "test-results/showcase/profile-mobile.png", "width": 390, "height": 844, "data": "synthetic Demo Student and fake @campus.test identity; no Aadhaar value" }
+  ],
+  "dataProvenance": {
+    "functionalActors": "unique demo-*@campus.test QA identities; visible names Demo Student and Demo Recruiter",
+    "functionalRecords": "Demo Systems, Demo Software Engineer, Demo Engineering Internship, Demo Buildathon and Demo Team",
+    "emailTransport": "in-process JSON capture",
+    "externalEmailSent": false,
+    "realOtpDisplayed": false,
+    "aadhaarEnteredOrDisplayed": false,
+    "seedBusinessRowsModified": false,
+    "uniqueQaRowsCleaned": true,
+    "reportsCapture": "live aggregate from the existing Oracle QA database; figures are illustrative only and were not independently validated"
+  },
+  "limitations": [
+    "These browser results do not measure production performance or represent a benchmark.",
+    "The reports screenshot displays current database aggregates; they must not be presented as confirmed institutional statistics.",
+    "The mobile review-loop wrapper could not run on this systemd version; equivalent allowlisted browser commands passed manually under the same sequential memory/CPU limits."
+  ]
+}

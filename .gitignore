@@ -1,0 +1,20 @@
+node_modules/
+client/dist/
+dist/
+.env
+.env.*
+!.env.example
+logs/*
+!logs/.gitkeep
+storage/
+test-results/
+playwright-report/
+*.tsbuildinfo
+
+# Local HyperFrames runtime and generated render caches; source stays trackable.
+/brag-output/.runtime/
+/brag-output/composition/.hyperframes/
+
+# Canonical rendered files are delivered from deliverables/video/.
+/brag-output/brag.mp4
+/brag-output/brag.jpg

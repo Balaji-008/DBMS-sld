@@ -1,0 +1,21 @@
+[Unit]
+Description=CampusBridge Cloudflare tunnel
+After=network-online.target campusbridge-api.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=@ROOT@
+Environment=PATH=@NODE_BIN@:/usr/local/bin:/usr/bin:/bin
+Environment=NODE_OPTIONS=--max-old-space-size=192
+ExecStart=@WRANGLER@ tunnel run @TUNNEL_ID@ --config cloudflare/wrangler.jsonc
+Restart=on-failure
+RestartSec=5s
+MemoryMax=384M
+MemorySwapMax=128M
+TasksMax=64
+StandardOutput=append:@ROOT@/logs/tunnel.log
+StandardError=append:@ROOT@/logs/tunnel.log
+
+[Install]
+WantedBy=default.target

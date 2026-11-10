@@ -1,0 +1,174 @@
+{
+  "title": "Placements, connected.",
+  "subtitle": "Amrita Placement Portal · Bengaluru Campus",
+  "palette": {
+    "wine": "641F35",
+    "wineDeep": "401523",
+    "ivory": "F6F0E5",
+    "gold": "C9A96E",
+    "ink": "241E1B",
+    "muted": "756B64",
+    "white": "FFFFFF",
+    "sage": "748B78"
+  },
+  "architecture": [
+    {
+      "title": "Student / recruiter / placement team",
+      "detail": "Responsive React + TypeScript",
+      "kind": "app"
+    },
+    {
+      "title": "Cloudflare",
+      "detail": "Static assets · Worker · private VPC/tunnel",
+      "kind": "edge"
+    },
+    {
+      "title": "Express API",
+      "detail": "Role checks · bound SQL · transactions",
+      "kind": "api"
+    },
+    {
+      "title": "Oracle · FREEPDB1",
+      "detail": "PLACEMENTS_PORTAL relations",
+      "kind": "db"
+    }
+  ],
+  "sidePaths": [
+    {
+      "from": "Express API",
+      "to": "Gmail SMTP",
+      "detail": "OTP message delivery only"
+    },
+    {
+      "from": "APEX SQL Workshop",
+      "to": "Oracle business tables",
+      "detail": "Read-only inspection examples"
+    }
+  ],
+  "dbms": {
+    "tableCount": 18,
+    "tableCountTag": "[DERIVED]",
+    "tableCountMethod": "Count of CREATE TABLE statements in database/001_schema.sql; verify with rg before publishing.",
+    "groups": [
+      {
+        "title": "IDENTITY",
+        "tables": [
+          "DEPARTMENTS",
+          "COMPANIES",
+          "USERS",
+          "STUDENTS",
+          "STUDENT_PHONE_NUMBERS"
+        ]
+      },
+      {
+        "title": "PLACEMENT",
+        "tables": [
+          "OPPORTUNITIES",
+          "OPPORTUNITY_\nELIGIBLE_DEPARTMENTS",
+          "OPPORTUNITY_SKILLS",
+          "APPLICATIONS",
+          "PLACEMENTS",
+          "INTERNSHIPS"
+        ]
+      },
+      {
+        "title": "ENGAGEMENT",
+        "tables": [
+          "HACKATHONS",
+          "HACKATHON_REGISTRATIONS",
+          "CERTIFICATES"
+        ]
+      },
+      {
+        "title": "PLATFORM",
+        "tables": [
+          "OTP_EMAIL_LOCKS",
+          "OTP_CHALLENGES",
+          "SESSIONS",
+          "UPLOADS"
+        ]
+      }
+    ],
+    "integrity": [
+      "Identity primary keys",
+      "Foreign-key relationships",
+      "Unique participation / outcome links",
+      "CHECK rules for role, status, score and dates"
+    ],
+    "normalization": "Phones and opportunity eligibility/skills have relation rows. JSON arrays remain serialization mirrors; placement requirements also retain a historical snapshot.",
+    "transaction": "Profile update replaces user, student and phone rows as one transaction; an error rolls back the unit."
+  },
+  "workflows": [
+    "Student: profile → eligible opportunity → application",
+    "Recruiter: company opportunity → application stage",
+    "Placement team: approval → outcomes and reports",
+    "Student: hackathon registration → registration list"
+  ],
+  "qaNote": "Nov 10 mobile, app and public-device QA completed; reports cover exercised journeys and layout checks, not exhaustive coverage or physical-device certification.",
+  "sources": [
+    "README.md",
+    "database/001_schema.sql",
+    "database/SCHEMA.md",
+    "docs/team-viva/DBMS-WALKTHROUGH.md",
+    ".superpowers/sdd/public-release/qa-publish-report.md",
+    "docs/showcase/public-device-results.json",
+    "docs/team-viva/DBMS-WALKTHROUGH.md"
+  ],
+  "qa": {
+    "verifiedAt": "2026-11-10T16:22:01Z",
+    "gates": [
+      {
+        "label": "brand",
+        "checks": 29,
+        "log": "test-results/review-loop/mobile/2026-11-10T16-18-48-266Z-07e79e72/state.json"
+      },
+      {
+        "label": "shell/navigation",
+        "checks": 35,
+        "log": "test-results/review-loop/mobile/2026-11-10T16-18-48-266Z-07e79e72/state.json"
+      },
+      {
+        "label": "three-role functional/mobile",
+        "checks": 43,
+        "log": "test-results/review-loop/mobile/2026-11-10T16-18-48-266Z-07e79e72/state.json"
+      },
+      {
+        "label": "public landing layout",
+        "checks": 19,
+        "log": "docs/showcase/public-device-results.json"
+      }
+    ],
+    "roles": [
+      "student",
+      "recruiter",
+      "placement team"
+    ],
+    "mobileViewportsPx": [
+      320,
+      360,
+      390,
+      430,
+      650,
+      651,
+      768,
+      900,
+      901,
+      1024,
+      1440,
+      1920
+    ],
+    "outcomes": {
+      "browserErrors": 0,
+      "failedImages": 0,
+      "mobileLayoutIssues": 0,
+      "externalEmailSent": false
+    },
+    "limitations": [
+      "Automated journeys are not exhaustive coverage.",
+      "Mail used in-process JSON capture; no external email was sent.",
+      "200% text-size checks use computed-font-size emulation, not browser chrome zoom.",
+      "Browser emulation does not certify physical devices.",
+      "Reports screenshot shows an Oracle QA aggregate with unverified provenance and is excluded from institutional results claims."
+    ]
+  }
+}

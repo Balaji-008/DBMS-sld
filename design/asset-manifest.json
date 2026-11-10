@@ -1,0 +1,105 @@
+{
+  "authoring": {
+    "tool": "scripts/render-brand-assets.py",
+    "python": "3.13.13",
+    "pillow": "12.3.0",
+    "seed": 17,
+    "explicit_command": "systemd-run --user --scope -p MemoryMax=256M -p MemorySwapMax=64M python scripts/render-brand-assets.py",
+    "frame_rendering": "deterministic from absolute frame index; offline only"
+  },
+  "animation": {
+    "fps": 12.5,
+    "frame_count": 48,
+    "frame_duration_ms": 80,
+    "duration_seconds": 3.84,
+    "colors": {
+      "ivory": "#f8f6f2",
+      "burgundy": "#761731",
+      "deep_wine": "#431626",
+      "gold": "#c79a63"
+    },
+    "antialias_scale": 2,
+    "items": {
+      "career-orbit": {
+        "gif": "client/public/media/career-orbit.gif",
+        "poster": "client/public/media/career-orbit-poster.png",
+        "dimensions": [
+          640,
+          420
+        ],
+        "frames": 48,
+        "frame_duration_ms": 80,
+        "loop": "infinite",
+        "gif_bytes": 653615,
+        "poster_bytes": 37403,
+        "render_seconds": 1.061
+      },
+      "pathways": {
+        "gif": "client/public/media/pathways.gif",
+        "poster": "client/public/media/pathways-poster.png",
+        "dimensions": [
+          480,
+          260
+        ],
+        "frames": 48,
+        "frame_duration_ms": 80,
+        "loop": "infinite",
+        "gif_bytes": 396511,
+        "poster_bytes": 22900,
+        "render_seconds": 0.575
+      }
+    }
+  },
+  "webp_exports": {
+    "campus-sketch.webp": {
+      "source": "client/public/media/campus-sketch.png",
+      "output": "client/public/media/campus-sketch.webp",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "quality": 86,
+      "bytes": 470944
+    },
+    "opportunity-sketch.webp": {
+      "source": "client/public/media/opportunity-sketch.png",
+      "output": "client/public/media/opportunity-sketch.webp",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "quality": 86,
+      "bytes": 123154
+    }
+  },
+  "logo_trim": {
+    "source": "client/public/brand/amrita-logo.png",
+    "output": "client/public/brand/amrita-logo-trimmed.png",
+    "alpha_bbox_xyxy": [
+      10,
+      183,
+      1128,
+      407
+    ],
+    "dimensions": [
+      1118,
+      224
+    ],
+    "pixel_content": "alpha-bounds crop only; source pixels preserved"
+  },
+  "source_sha256": {
+    "client/public/brand/amrita-logo.png": "6437e27e363f354550057e632ec5b9e657871189575d867792d01600eaac2f42",
+    "client/public/media/campus-sketch.png": "eaa8b802d4397f02f56a7980b75e65a56aabe16b0efbdea46f10cb25ca1b2207",
+    "client/public/media/opportunity-sketch.png": "fb2afcbb2d87fac7e4490501af53daad1f1bad1117ce9e9dfc4cebf81b84d458"
+  },
+  "output_sha256": {
+    "client/public/brand/amrita-logo-trimmed.png": "80052f99703fde5db862191a5b0f8a33b2c11df643f1304af290b6d45b7500d9",
+    "client/public/media/career-orbit.gif": "fff8fed7ce266c7e080a54d4a82851c68c6d7491fcb1391b0f355a68f1353454",
+    "client/public/media/career-orbit-poster.png": "2a48e98e73ffebdebf4f4983c4efb46a8a146d142e0c85223e4b75a9bff6bf59",
+    "client/public/media/pathways.gif": "8205f79aa7f8973feb2ca310aff50f064d77ea818ce2df5ce643de4ce77fe6bd",
+    "client/public/media/pathways-poster.png": "a78accb503b269765ec7d45d2a39f50ee2e476e64f077050fa18a3141e3c810b",
+    "client/public/media/campus-sketch.webp": "80baeb6c411320c90cd04f248d6fb323880cd0948e7eb93ddeb0d2b4a5a7cec1",
+    "client/public/media/opportunity-sketch.webp": "8b2995ecf8f1a831689cfd86c1d5a0e7b60d9bfba253ebae9ed9a84807fe4dd1"
+  },
+  "actual_script_elapsed_seconds": 3.049
+}

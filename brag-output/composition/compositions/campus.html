@@ -1,0 +1,28 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #431626; color: #f8f6f2; }
+    .wash { position: absolute; inset: 0; background: radial-gradient(circle at 74% 44%, #761731 0%, #431626 58%); }
+    .campus-art { position: absolute; right: 32px; top: 24px; width: 980px; height: 1032px; object-fit: contain; opacity: 0.9; }
+    .wordmark { position: absolute; top: 114px; left: 172px; width: 455px; height: auto; object-fit: contain; }
+    .copy { position: absolute; left: 172px; top: 408px; width: 850px; font-family: 'EB Garamond', Georgia, serif; font-size: 82px; line-height: 0.99; letter-spacing: -0.025em; font-weight: 500; }
+    .copy span { color: #e4bd8c; }
+    .kicker { position: absolute; left: 177px; top: 342px; font: 600 28px/1 'Inter', Arial, sans-serif; letter-spacing: 0.13em; text-transform: uppercase; color: #e4bd8c; }
+    .clip { opacity: 1; }
+  </style>
+  <div id="root" data-composition-id="scene-campus" data-width="1920" data-height="1080">
+    <div class="wash"></div>
+    <img id="campus-sketch" class="clip campus-art" src="assets/brand/campus-sketch.webp" alt="Amrita Bengaluru campus architectural sketch" data-start="0" data-duration="4" data-track-index="1" />
+    <img id="campus-wordmark" class="clip wordmark" src="assets/brand/amrita-logo-trimmed.png" alt="Amrita Bengaluru Campus" data-start="0.3" data-duration="3.7" data-track-index="2" />
+    <p id="campus-kicker" class="clip kicker" data-start="0.45" data-duration="3.4" data-track-index="3">Amrita · Bengaluru</p>
+    <h1 id="campus-copy" class="clip copy" data-start="0.55" data-duration="3.3" data-track-index="4">From campus<br/>learning to a<br/><span>career in motion.</span></h1>
+  </div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#campus-sketch", { x: 28, scale: 1.025 }, { x: 0, scale: 1, duration: 0.8, ease: "power2.out" }, 0);
+    tl.fromTo("#campus-wordmark", { y: 12 }, { y: 0, duration: 0.55, ease: "power3.out" }, 0.28);
+    tl.fromTo("#campus-kicker", { y: 8 }, { y: 0, duration: 0.45, ease: "power3.out" }, 0.58);
+    tl.fromTo("#campus-copy", { y: 18 }, { y: 0, duration: 0.7, ease: "power3.out" }, 0.7);
+    window.__timelines["scene-campus"] = tl;
+  </script>
+</template>

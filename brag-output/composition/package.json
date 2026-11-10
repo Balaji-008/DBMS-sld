@@ -1,0 +1,11 @@
+{
+  "name": "amrita-placement-portal-launch-film",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "preview": "../.runtime/node_modules/.bin/hyperframes preview .",
+    "check": "../.runtime/node_modules/.bin/hyperframes check . --json",
+    "snapshot": "../.runtime/node_modules/.bin/hyperframes snapshot . --at 2.4,7,13.2,19.1",
+    "render": "../.runtime/node_modules/.bin/hyperframes render . --fps 30 --quality delivery --workers 1 --low-memory-mode --frames-cache-dir off --output ../brag.mp4"
+  }
+}

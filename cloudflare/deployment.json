@@ -1,0 +1,8 @@
+{
+  "hostname": "dbms.sld.parswanadh.dev",
+  "tunnel_name": "campusbridge-dbms",
+  "tunnel_id": "a5b0010f-85c8-4484-b5f5-ff391726bf07",
+  "origin": "http://127.0.0.1:3000",
+  "database": "Oracle Free / FREEPDB1 / PLACEMENTS_PORTAL",
+  "note": "Only HTTP reaches the private tunnel; no Oracle port is published by this application."
+}

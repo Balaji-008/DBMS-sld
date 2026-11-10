@@ -1,0 +1,26 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #f8f6f2; color: #30272b; font-family: 'Inter', Arial, sans-serif; }
+    .label { position: absolute; left: 156px; top: 278px; color: #761731; font: 700 28px/1 'Inter', Arial, sans-serif; letter-spacing: .15em; }
+    .title { position: absolute; left: 156px; top: 332px; width: 590px; color: #431626; font: 500 84px/.98 'EB Garamond', Georgia, serif; }
+    .line { position: absolute; left: 158px; top: 542px; width: 128px; height: 3px; background: #c79a63; }
+    .note { position: absolute; left: 158px; top: 581px; width: 560px; color: #6e6269; font: 400 28px/1.4 'Inter', Arial, sans-serif; }
+    .crop { position: absolute; left: 816px; top: 318px; width: 720px; height: 400px; overflow: hidden; border: 1px solid #c79a63; border-radius: 24px; background: #fff; box-shadow: 0 28px 78px #43162622; }
+    .screen { position: absolute; left: 0; top: 0; display: block; width: 720px; height: auto; }
+    .clip { opacity: 1; }
+  </style>
+  <div id="root" data-composition-id="scene-dashboard" data-width="1920" data-height="1080">
+    <p id="dashboard-label" class="clip label" data-start="0" data-duration="5.8" data-track-index="1">STUDENT DASHBOARD</p>
+    <h2 id="dashboard-title" class="clip title" data-start="0" data-duration="5.8" data-track-index="2">Browse<br/>opportunities.</h2>
+    <div id="dashboard-rule" class="clip line" data-start="0" data-duration="5.45" data-track-index="3"></div>
+    <p id="dashboard-note" class="clip note" data-start="0" data-duration="5.35" data-track-index="4">The real dashboard entry point, shown without its summary counts.</p>
+    <div id="dashboard-crop" class="clip crop" data-layout-allow-overflow data-start="0" data-duration="5.9" data-track-index="5"><img class="screen" data-hold src="assets/captures/dashboard-mobile.png" alt="QA-approved student dashboard capture cropped to the greeting and Browse opportunities button" /></div>
+  </div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#dashboard-label, #dashboard-title, #dashboard-rule, #dashboard-note", { x: -14 }, { x: 0, duration: 0.5, stagger: 0.08, ease: "power3.out" }, 0);
+    tl.fromTo("#dashboard-crop", { x: 22 }, { x: 0, duration: 0.65, ease: "power3.out" }, 0);
+    window.__timelines["scene-dashboard"] = tl;
+  </script>
+</template>

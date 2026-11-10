@@ -1,0 +1,904 @@
+{
+  "generatedAt": "2026-11-10T16:22:01.527Z",
+  "target": "configured public-release QA landing route",
+  "viewportWidths": [
+    320,
+    360,
+    390,
+    430,
+    650,
+    651,
+    768,
+    900,
+    901,
+    1024,
+    1440,
+    1920
+  ],
+  "sourceHashes": {
+    "client/src/pages/Landing.tsx": "91b67ecc93bbc2d69390c2920e6f5719b47a78a95144a665425d91e5995c4bcc",
+    "client/src/pages/Login.tsx": "1cccf867646880698f397191a4f36198db7aa32da1d195b8d074acddd8d5a00e",
+    "client/src/styles.css": "acf9f93e031d6512be7644d8eb16f7e970068108513c0c9b63fe0afea68c3714"
+  },
+  "screenshots": {
+    "desktop": "test-results/public-release/landing-desktop.png",
+    "mobile": "test-results/public-release/landing-mobile.png"
+  },
+  "textZoomMethod": "At 320, 390, 650 and 651 CSS px, double the computed font size of each visible text-bearing element through Playwright before measuring; this approximates 200% browser text zoom without changing browser chrome.",
+  "checks": [
+    "public landing route loads",
+    "hero fits and copy/CTA/GIF/sketch do not overlap at 320px",
+    "hero fits and copy/CTA/GIF/sketch do not overlap at 360px",
+    "hero fits and copy/CTA/GIF/sketch do not overlap at 390px",
+    "hero fits and copy/CTA/GIF/sketch do not overlap at 430px",
+    "hero fits and copy/CTA/GIF/sketch do not overlap at 650px",
+    "hero fits and copy/CTA/GIF/sketch do not overlap at 651px",
+    "hero fits and copy/CTA/GIF/sketch do not overlap at 768px",
+    "hero fits and copy/CTA/GIF/sketch do not overlap at 900px",
+    "hero fits and copy/CTA/GIF/sketch do not overlap at 901px",
+    "hero fits and copy/CTA/GIF/sketch do not overlap at 1024px",
+    "hero fits and copy/CTA/GIF/sketch do not overlap at 1440px",
+    "hero fits and copy/CTA/GIF/sketch do not overlap at 1920px",
+    "hero fits without overlap under 200% text-size emulation at 320px",
+    "hero fits without overlap under 200% text-size emulation at 390px",
+    "hero fits without overlap under 200% text-size emulation at 650px",
+    "hero fits without overlap under 200% text-size emulation at 651px",
+    "captured current desktop and mobile landing screenshots",
+    "reduced-motion route uses static posters and requests no animated GIFs"
+  ],
+  "measurements": [
+    {
+      "width": 320,
+      "mode": "normal",
+      "documentWidth": 320,
+      "rects": {
+        "copy": {
+          "left": 17,
+          "right": 303,
+          "top": 129,
+          "bottom": 593.78125,
+          "width": 286,
+          "height": 464.78125,
+          "visible": true
+        },
+        "cta": {
+          "left": 17,
+          "right": 303,
+          "top": 472.28125,
+          "bottom": 553.28125,
+          "width": 286,
+          "height": 81,
+          "visible": true
+        },
+        "gif": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "visible": false
+        },
+        "campus": {
+          "left": 17,
+          "right": 303,
+          "top": 621.78125,
+          "bottom": 717.109375,
+          "width": 286,
+          "height": 95.328125,
+          "visible": true
+        },
+        "sketch": {
+          "left": 17,
+          "right": 303,
+          "top": 621.78125,
+          "bottom": 717.109375,
+          "width": 286,
+          "height": 95.328125,
+          "visible": true
+        }
+      },
+      "overlaps": []
+    },
+    {
+      "width": 360,
+      "mode": "normal",
+      "documentWidth": 360,
+      "rects": {
+        "copy": {
+          "left": 17,
+          "right": 343,
+          "top": 129,
+          "bottom": 516.6875,
+          "width": 326,
+          "height": 387.6875,
+          "visible": true
+        },
+        "cta": {
+          "left": 17,
+          "right": 343,
+          "top": 430.6875,
+          "bottom": 476.1875,
+          "width": 326,
+          "height": 45.5,
+          "visible": true
+        },
+        "gif": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "visible": false
+        },
+        "campus": {
+          "left": 17,
+          "right": 343,
+          "top": 544.6875,
+          "bottom": 653.34375,
+          "width": 326,
+          "height": 108.65625,
+          "visible": true
+        },
+        "sketch": {
+          "left": 17,
+          "right": 343,
+          "top": 544.6875,
+          "bottom": 653.34375,
+          "width": 326,
+          "height": 108.65625,
+          "visible": true
+        }
+      },
+      "overlaps": []
+    },
+    {
+      "width": 390,
+      "mode": "normal",
+      "documentWidth": 390,
+      "rects": {
+        "copy": {
+          "left": 17,
+          "right": 373,
+          "top": 129,
+          "bottom": 516.6875,
+          "width": 356,
+          "height": 387.6875,
+          "visible": true
+        },
+        "cta": {
+          "left": 17,
+          "right": 373,
+          "top": 430.6875,
+          "bottom": 476.1875,
+          "width": 356,
+          "height": 45.5,
+          "visible": true
+        },
+        "gif": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "visible": false
+        },
+        "campus": {
+          "left": 17,
+          "right": 373,
+          "top": 544.6875,
+          "bottom": 663.34375,
+          "width": 356,
+          "height": 118.65625,
+          "visible": true
+        },
+        "sketch": {
+          "left": 17,
+          "right": 373,
+          "top": 544.6875,
+          "bottom": 663.34375,
+          "width": 356,
+          "height": 118.65625,
+          "visible": true
+        }
+      },
+      "overlaps": []
+    },
+    {
+      "width": 430,
+      "mode": "normal",
+      "documentWidth": 430,
+      "rects": {
+        "copy": {
+          "left": 22,
+          "right": 408,
+          "top": 129,
+          "bottom": 548.3125,
+          "width": 386,
+          "height": 419.3125,
+          "visible": true
+        },
+        "cta": {
+          "left": 22,
+          "right": 408,
+          "top": 462.3125,
+          "bottom": 507.8125,
+          "width": 386,
+          "height": 45.5,
+          "visible": true
+        },
+        "gif": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "visible": false
+        },
+        "campus": {
+          "left": 22,
+          "right": 408,
+          "top": 576.3125,
+          "bottom": 704.96875,
+          "width": 386,
+          "height": 128.65625,
+          "visible": true
+        },
+        "sketch": {
+          "left": 22,
+          "right": 408,
+          "top": 576.3125,
+          "bottom": 704.96875,
+          "width": 386,
+          "height": 128.65625,
+          "visible": true
+        }
+      },
+      "overlaps": []
+    },
+    {
+      "width": 650,
+      "mode": "normal",
+      "documentWidth": 650,
+      "rects": {
+        "copy": {
+          "left": 22,
+          "right": 628,
+          "top": 129,
+          "bottom": 460.5625,
+          "width": 606,
+          "height": 331.5625,
+          "visible": true
+        },
+        "cta": {
+          "left": 22,
+          "right": 628,
+          "top": 374.5625,
+          "bottom": 420.0625,
+          "width": 606,
+          "height": 45.5,
+          "visible": true
+        },
+        "gif": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "visible": false
+        },
+        "campus": {
+          "left": 22,
+          "right": 628,
+          "top": 488.5625,
+          "bottom": 690.5625,
+          "width": 606,
+          "height": 202,
+          "visible": true
+        },
+        "sketch": {
+          "left": 22,
+          "right": 628,
+          "top": 488.5625,
+          "bottom": 690.5625,
+          "width": 606,
+          "height": 202,
+          "visible": true
+        }
+      },
+      "overlaps": []
+    },
+    {
+      "width": 651,
+      "mode": "normal",
+      "documentWidth": 651,
+      "rects": {
+        "copy": {
+          "left": 28,
+          "right": 316.96875,
+          "top": 132,
+          "bottom": 694.28125,
+          "width": 288.96875,
+          "height": 562.28125,
+          "visible": true
+        },
+        "cta": {
+          "left": 28,
+          "right": 316.96875,
+          "top": 579.78125,
+          "bottom": 646.78125,
+          "width": 288.96875,
+          "height": 67,
+          "visible": true
+        },
+        "gif": {
+          "left": 369,
+          "right": 597,
+          "top": 264.5,
+          "bottom": 414.125,
+          "width": 228,
+          "height": 149.625,
+          "visible": true
+        },
+        "campus": {
+          "left": 28,
+          "right": 623,
+          "top": 722.28125,
+          "bottom": 920.609375,
+          "width": 595,
+          "height": 198.328125,
+          "visible": true
+        },
+        "sketch": {
+          "left": 28,
+          "right": 623,
+          "top": 722.28125,
+          "bottom": 920.609375,
+          "width": 595,
+          "height": 198.328125,
+          "visible": true
+        }
+      },
+      "overlaps": []
+    },
+    {
+      "width": 768,
+      "mode": "normal",
+      "documentWidth": 768,
+      "rects": {
+        "copy": {
+          "left": 28,
+          "right": 429.28125,
+          "top": 132,
+          "bottom": 577.40625,
+          "width": 401.28125,
+          "height": 445.40625,
+          "visible": true
+        },
+        "cta": {
+          "left": 28,
+          "right": 429.28125,
+          "top": 482.40625,
+          "bottom": 529.90625,
+          "width": 401.28125,
+          "height": 47.5,
+          "visible": true
+        },
+        "gif": {
+          "left": 486,
+          "right": 714,
+          "top": 264.5,
+          "bottom": 414.125,
+          "width": 228,
+          "height": 149.625,
+          "visible": true
+        },
+        "campus": {
+          "left": 28,
+          "right": 740,
+          "top": 605.40625,
+          "bottom": 842.734375,
+          "width": 712,
+          "height": 237.328125,
+          "visible": true
+        },
+        "sketch": {
+          "left": 28,
+          "right": 740,
+          "top": 605.40625,
+          "bottom": 842.734375,
+          "width": 712,
+          "height": 237.328125,
+          "visible": true
+        }
+      },
+      "overlaps": []
+    },
+    {
+      "width": 900,
+      "mode": "normal",
+      "documentWidth": 900,
+      "rects": {
+        "copy": {
+          "left": 28,
+          "right": 556,
+          "top": 136,
+          "bottom": 477.40625,
+          "width": 528,
+          "height": 341.40625,
+          "visible": true
+        },
+        "cta": {
+          "left": 28,
+          "right": 556,
+          "top": 382.40625,
+          "bottom": 429.90625,
+          "width": 528,
+          "height": 47.5,
+          "visible": true
+        },
+        "gif": {
+          "left": 618,
+          "right": 846,
+          "top": 268.5,
+          "bottom": 418.125,
+          "width": 228,
+          "height": 149.625,
+          "visible": true
+        },
+        "campus": {
+          "left": 28,
+          "right": 872,
+          "top": 505.40625,
+          "bottom": 786.734375,
+          "width": 844,
+          "height": 281.328125,
+          "visible": true
+        },
+        "sketch": {
+          "left": 28,
+          "right": 872,
+          "top": 505.40625,
+          "bottom": 786.734375,
+          "width": 844,
+          "height": 281.328125,
+          "visible": true
+        }
+      },
+      "overlaps": []
+    },
+    {
+      "width": 901,
+      "mode": "normal",
+      "documentWidth": 901,
+      "rects": {
+        "copy": {
+          "left": 28,
+          "right": 556.96875,
+          "top": 136.046875,
+          "bottom": 477.578125,
+          "width": 528.96875,
+          "height": 341.53125,
+          "visible": true
+        },
+        "cta": {
+          "left": 28,
+          "right": 556.96875,
+          "top": 382.578125,
+          "bottom": 430.078125,
+          "width": 528.96875,
+          "height": 47.5,
+          "visible": true
+        },
+        "gif": {
+          "left": 619,
+          "right": 847,
+          "top": 268.546875,
+          "bottom": 418.171875,
+          "width": 228,
+          "height": 149.625,
+          "visible": true
+        },
+        "campus": {
+          "left": 28,
+          "right": 873,
+          "top": 505.578125,
+          "bottom": 787.234375,
+          "width": 845,
+          "height": 281.65625,
+          "visible": true
+        },
+        "sketch": {
+          "left": 28,
+          "right": 873,
+          "top": 505.578125,
+          "bottom": 787.234375,
+          "width": 845,
+          "height": 281.65625,
+          "visible": true
+        }
+      },
+      "overlaps": []
+    },
+    {
+      "width": 1024,
+      "mode": "normal",
+      "documentWidth": 1024,
+      "rects": {
+        "copy": {
+          "left": 28,
+          "right": 675.046875,
+          "top": 143.4375,
+          "bottom": 500.3125,
+          "width": 647.046875,
+          "height": 356.875,
+          "visible": true
+        },
+        "cta": {
+          "left": 28,
+          "right": 675.046875,
+          "top": 405.3125,
+          "bottom": 452.8125,
+          "width": 647.046875,
+          "height": 47.5,
+          "visible": true
+        },
+        "gif": {
+          "left": 742,
+          "right": 970,
+          "top": 275.9375,
+          "bottom": 425.5625,
+          "width": 228,
+          "height": 149.625,
+          "visible": true
+        },
+        "campus": {
+          "left": 28,
+          "right": 996,
+          "top": 528.3125,
+          "bottom": 850.96875,
+          "width": 968,
+          "height": 322.65625,
+          "visible": true
+        },
+        "sketch": {
+          "left": 28,
+          "right": 996,
+          "top": 528.3125,
+          "bottom": 850.96875,
+          "width": 968,
+          "height": 322.65625,
+          "visible": true
+        }
+      },
+      "overlaps": []
+    },
+    {
+      "width": 1440,
+      "mode": "normal",
+      "documentWidth": 1440,
+      "rects": {
+        "copy": {
+          "left": 110,
+          "right": 820,
+          "top": 168.390625,
+          "bottom": 640.8125,
+          "width": 710,
+          "height": 472.421875,
+          "visible": true
+        },
+        "cta": {
+          "left": 110,
+          "right": 820,
+          "top": 545.8125,
+          "bottom": 593.3125,
+          "width": 710,
+          "height": 47.5,
+          "visible": true
+        },
+        "gif": {
+          "left": 1076,
+          "right": 1304,
+          "top": 300.890625,
+          "bottom": 450.515625,
+          "width": 228,
+          "height": 149.625,
+          "visible": true
+        },
+        "campus": {
+          "left": 110,
+          "right": 1330,
+          "top": 668.8125,
+          "bottom": 1075.46875,
+          "width": 1220,
+          "height": 406.65625,
+          "visible": true
+        },
+        "sketch": {
+          "left": 110,
+          "right": 1330,
+          "top": 668.8125,
+          "bottom": 1075.46875,
+          "width": 1220,
+          "height": 406.65625,
+          "visible": true
+        }
+      },
+      "overlaps": []
+    },
+    {
+      "width": 1920,
+      "mode": "normal",
+      "documentWidth": 1920,
+      "rects": {
+        "copy": {
+          "left": 350,
+          "right": 1060,
+          "top": 173,
+          "bottom": 645.421875,
+          "width": 710,
+          "height": 472.421875,
+          "visible": true
+        },
+        "cta": {
+          "left": 350,
+          "right": 1060,
+          "top": 550.421875,
+          "bottom": 597.921875,
+          "width": 710,
+          "height": 47.5,
+          "visible": true
+        },
+        "gif": {
+          "left": 1316,
+          "right": 1544,
+          "top": 305.5,
+          "bottom": 455.125,
+          "width": 228,
+          "height": 149.625,
+          "visible": true
+        },
+        "campus": {
+          "left": 350,
+          "right": 1570,
+          "top": 673.421875,
+          "bottom": 1080.078125,
+          "width": 1220,
+          "height": 406.65625,
+          "visible": true
+        },
+        "sketch": {
+          "left": 350,
+          "right": 1570,
+          "top": 673.421875,
+          "bottom": 1080.078125,
+          "width": 1220,
+          "height": 406.65625,
+          "visible": true
+        }
+      },
+      "overlaps": []
+    },
+    {
+      "width": 320,
+      "mode": "200%-text-emulation",
+      "documentWidth": 320,
+      "rects": {
+        "copy": {
+          "left": 17,
+          "right": 303,
+          "top": 129,
+          "bottom": 1459.546875,
+          "width": 286,
+          "height": 1330.546875,
+          "visible": true
+        },
+        "cta": {
+          "left": 17,
+          "right": 303,
+          "top": 1162.546875,
+          "bottom": 1360.546875,
+          "width": 286,
+          "height": 198,
+          "visible": true
+        },
+        "gif": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "visible": false
+        },
+        "campus": {
+          "left": 17,
+          "right": 303,
+          "top": 1487.546875,
+          "bottom": 1582.875,
+          "width": 286,
+          "height": 95.328125,
+          "visible": true
+        },
+        "sketch": {
+          "left": 17,
+          "right": 303,
+          "top": 1487.546875,
+          "bottom": 1582.875,
+          "width": 286,
+          "height": 95.328125,
+          "visible": true
+        }
+      },
+      "overlaps": []
+    },
+    {
+      "width": 390,
+      "mode": "200%-text-emulation",
+      "documentWidth": 390,
+      "rects": {
+        "copy": {
+          "left": 17,
+          "right": 373,
+          "top": 129,
+          "bottom": 1245.84375,
+          "width": 356,
+          "height": 1116.84375,
+          "visible": true
+        },
+        "cta": {
+          "left": 17,
+          "right": 373,
+          "top": 987.84375,
+          "bottom": 1146.84375,
+          "width": 356,
+          "height": 159,
+          "visible": true
+        },
+        "gif": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "visible": false
+        },
+        "campus": {
+          "left": 17,
+          "right": 373,
+          "top": 1273.84375,
+          "bottom": 1392.5,
+          "width": 356,
+          "height": 118.65625,
+          "visible": true
+        },
+        "sketch": {
+          "left": 17,
+          "right": 373,
+          "top": 1273.84375,
+          "bottom": 1392.5,
+          "width": 356,
+          "height": 118.65625,
+          "visible": true
+        }
+      },
+      "overlaps": []
+    },
+    {
+      "width": 650,
+      "mode": "200%-text-emulation",
+      "documentWidth": 650,
+      "rects": {
+        "copy": {
+          "left": 22,
+          "right": 628,
+          "top": 129,
+          "bottom": 1172.125,
+          "width": 606,
+          "height": 1043.125,
+          "visible": true
+        },
+        "cta": {
+          "left": 22,
+          "right": 628,
+          "top": 1034.125,
+          "bottom": 1112.125,
+          "width": 606,
+          "height": 78,
+          "visible": true
+        },
+        "gif": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "visible": false
+        },
+        "campus": {
+          "left": 22,
+          "right": 628,
+          "top": 1200.125,
+          "bottom": 1402.125,
+          "width": 606,
+          "height": 202,
+          "visible": true
+        },
+        "sketch": {
+          "left": 22,
+          "right": 628,
+          "top": 1200.125,
+          "bottom": 1402.125,
+          "width": 606,
+          "height": 202,
+          "visible": true
+        }
+      },
+      "overlaps": []
+    },
+    {
+      "width": 651,
+      "mode": "200%-text-emulation",
+      "documentWidth": 651,
+      "rects": {
+        "copy": {
+          "left": 28,
+          "right": 316.96875,
+          "top": 132,
+          "bottom": 1612.0625,
+          "width": 288.96875,
+          "height": 1480.0625,
+          "visible": true
+        },
+        "cta": {
+          "left": 28,
+          "right": 316.96875,
+          "top": 1311.0625,
+          "bottom": 1506.0625,
+          "width": 288.96875,
+          "height": 195,
+          "visible": true
+        },
+        "gif": {
+          "left": 369,
+          "right": 597,
+          "top": 458,
+          "bottom": 607.625,
+          "width": 228,
+          "height": 149.625,
+          "visible": true
+        },
+        "campus": {
+          "left": 28,
+          "right": 623,
+          "top": 1640.0625,
+          "bottom": 1838.390625,
+          "width": 595,
+          "height": 198.328125,
+          "visible": true
+        },
+        "sketch": {
+          "left": 28,
+          "right": 623,
+          "top": 1640.0625,
+          "bottom": 1838.390625,
+          "width": 595,
+          "height": 198.328125,
+          "visible": true
+        }
+      },
+      "overlaps": []
+    }
+  ],
+  "reducedMotion": {
+    "gifRequests": 0,
+    "posterOnly": true
+  },
+  "status": "passed"
+}

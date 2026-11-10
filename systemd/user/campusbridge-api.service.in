@@ -1,0 +1,19 @@
+[Unit]
+Description=CampusBridge Oracle-backed placement portal API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=@ROOT@
+ExecStart=@NODE@ --max-old-space-size=384 --import tsx server/src/index.ts
+Restart=on-failure
+RestartSec=3s
+MemoryMax=512M
+MemorySwapMax=128M
+TasksMax=64
+StandardOutput=append:@ROOT@/logs/server.log
+StandardError=append:@ROOT@/logs/server.log
+
+[Install]
+WantedBy=default.target
